@@ -88,10 +88,9 @@ namespace SslChatServer
             var certLetsCrypt = X509Certificate2.CreateFromPemFile(@"/etc/letsencrypt/live/iothtnhust20201.xyz/cert.pem");
 
             //Pass the file path and file name to the StreamReader constructor
-            string line;
             StreamReader sr = new StreamReader(@"/etc/letsencrypt/live/iothtnhust20201.xyz/cert.pem");
             //Read the first line of text
-            line = sr.ReadLine();
+            var line = sr.ReadLine();
             //Continue to read until you reach end of file
             while (line != null)
             {
