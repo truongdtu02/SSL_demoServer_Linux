@@ -87,20 +87,20 @@ namespace SslChatServer
 
             var certLetsCrypt = X509Certificate2.CreateFromPemFile(@"/etc/letsencrypt/live/iothtnhust20201.xyz/cert.pem", @"/etc/letsencrypt/live/iothtnhust20201.xyz/privkey.pem");
 
-            //Pass the file path and file name to the StreamReader constructor
-            StreamReader sr = new StreamReader(@"/etc/letsencrypt/live/iothtnhust20201.xyz/chain.pem");
-            //Read the first line of text
-            var lineRead = sr.ReadLine();
-            //Continue to read until you reach end of file
-            while (lineRead != null)
-            {
-                //write the lie to console window
-                Console.WriteLine(lineRead);
-                //Read the next line
-                lineRead = sr.ReadLine();
-            }
-            //close the file
-            sr.Close();
+            ////Pass the file path and file name to the StreamReader constructor
+            //StreamReader sr = new StreamReader(@"/etc/letsencrypt/live/iothtnhust20201.xyz/chain.pem");
+            ////Read the first line of text
+            //var lineRead = sr.ReadLine();
+            ////Continue to read until you reach end of file
+            //while (lineRead != null)
+            //{
+            //    //write the lie to console window
+            //    Console.WriteLine(lineRead);
+            //    //Read the next line
+            //    lineRead = sr.ReadLine();
+            //}
+            ////close the file
+            //sr.Close();
 
             // Create and prepare a new SSL server context
             //var context = new SslContext(SslProtocols.Tls12, new X509Certificate2("server.pfx", "qwerty"));
