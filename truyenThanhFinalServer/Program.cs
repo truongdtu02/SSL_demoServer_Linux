@@ -84,7 +84,7 @@ namespace SslChatServer
                 var certWithKey = cert.CopyWithPrivateKey(key);
              */
 
-            var certLetsCrypt = X509Certificate2.CreateFromPemFile(@"cert.pem");
+            var certLetsCrypt = X509Certificate2.CreateFromPemFile(@"/etc/letsencrypt/live/iothtnhust20201.xyz/cert.pem");
 
             // Create and prepare a new SSL server context
             //var context = new SslContext(SslProtocols.Tls12, new X509Certificate2("server.pfx", "qwerty"));
