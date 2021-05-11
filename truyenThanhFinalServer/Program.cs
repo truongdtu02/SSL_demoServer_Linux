@@ -85,10 +85,10 @@ namespace SslChatServer
                 var certWithKey = cert.CopyWithPrivateKey(key);
              */
 
-            var certLetsCrypt = X509Certificate2.CreateFromPemFile(@"/etc/letsencrypt/live/iothtnhust20201.xyz/cert.pem");
+            var certLetsCrypt = X509Certificate2.CreateFromPemFile(@"/etc/letsencrypt/live/iothtnhust20201.xyz/fullchain.pem");
 
             //Pass the file path and file name to the StreamReader constructor
-            StreamReader sr = new StreamReader(@"/etc/letsencrypt/live/iothtnhust20201.xyz/cert.pem");
+            StreamReader sr = new StreamReader(@"/etc/letsencrypt/live/iothtnhust20201.xyz/fullchain.pem");
             //Read the first line of text
             var lineRead = sr.ReadLine();
             //Continue to read until you reach end of file
