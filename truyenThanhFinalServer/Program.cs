@@ -90,14 +90,14 @@ namespace SslChatServer
             //Pass the file path and file name to the StreamReader constructor
             StreamReader sr = new StreamReader(@"/etc/letsencrypt/live/iothtnhust20201.xyz/cert.pem");
             //Read the first line of text
-            var line = sr.ReadLine();
+            var lineRead = sr.ReadLine();
             //Continue to read until you reach end of file
-            while (line != null)
+            while (lineRead != null)
             {
                 //write the lie to console window
-                Console.WriteLine(line);
+                Console.WriteLine(lineRead);
                 //Read the next line
-                line = sr.ReadLine();
+                lineRead = sr.ReadLine();
             }
             //close the file
             sr.Close();
