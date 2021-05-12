@@ -103,8 +103,8 @@ namespace SslChatServer
             //sr.Close();
 
             // Create and prepare a new SSL server context
-            //string certPath = @"E:\truyenthanhproject\sim7600\ssl_tls\server.pfx";
-            var context = new SslContext(SslProtocols.Tls12, new X509Certificate2("server.pfx", "qwerty"));
+            string certPath = @"/etc/letsencrypt/live/iothtnhust20201.xyz/my.pfx";
+            var context = new SslContext(SslProtocols.Tls12, new X509Certificate2(certPath, "Tru@1997"));
             //var context = new SslContext(SslProtocols.Tls12, certLetsCrypt);
 
             // Create a new SSL chat server
