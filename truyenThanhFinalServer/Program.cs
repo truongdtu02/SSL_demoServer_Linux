@@ -85,8 +85,8 @@ namespace SslChatServer
                 var certWithKey = cert.CopyWithPrivateKey(key);
              */
 
-            //var certLetsCrypt = X509Certificate2.CreateFromPemFile(@"/etc/letsencrypt/live/iothtnhust20201.xyz/cert.pem", @"/etc/letsencrypt/live/iothtnhust20201.xyz/privkey.pem");
-            var certLetsCrypt = X509Certificate2.CreateFromEncryptedPem(@"/etc/letsencrypt/live/iothtnhust20201.xyz/cert.pem", @"/etc/letsencrypt/live/iothtnhust20201.xyz/privkey.pem", @"Tru@1997");
+            var certLetsCrypt = X509Certificate2.CreateFromPemFile(@"/etc/letsencrypt/live/iothtnhust20201.xyz/fullchain.pem", @"/etc/letsencrypt/live/iothtnhust20201.xyz/privkey.pem");
+            //var certLetsCrypt = X509Certificate2.
             ////Pass the file path and file name to the StreamReader constructor
             //StreamReader sr = new StreamReader(@"/etc/letsencrypt/live/iothtnhust20201.xyz/chain.pem");
             ////Read the first line of text
