@@ -86,7 +86,7 @@ namespace SslChatServer
              */
 
             //var certLetsCrypt = X509Certificate2.CreateFromPemFile(@"/etc/letsencrypt/live/iothtnhust20201.xyz/cert.pem", @"/etc/letsencrypt/live/iothtnhust20201.xyz/privkey.pem");
-
+            var certLetsCrypt = X509Certificate2.CreateFromCertFile(@"/etc/letsencrypt/live/iothtnhust20201.xyz/my.pfx");
             ////Pass the file path and file name to the StreamReader constructor
             //StreamReader sr = new StreamReader(@"/etc/letsencrypt/live/iothtnhust20201.xyz/chain.pem");
             ////Read the first line of text
@@ -103,9 +103,9 @@ namespace SslChatServer
             //sr.Close();
 
             // Create and prepare a new SSL server context
-            string certPath = @"/etc/letsencrypt/live/iothtnhust20201.xyz/my.pfx";
-            var context = new SslContext(SslProtocols.Tls12, new X509Certificate2(certPath, "Tru@1997"));
-            //var context = new SslContext(SslProtocols.Tls12, certLetsCrypt);
+            //string certPath = @"/etc/letsencrypt/live/iothtnhust20201.xyz/my.pfx";
+            //var context = new SslContext(SslProtocols.Tls12, new X509Certificate2(certPath, "Tru@1997"));
+            var context = new SslContext(SslProtocols.Tls12, certLetsCrypt);
 
             // Create a new SSL chat server
             var server = new ChatServer(context, IPAddress.Any, port);
