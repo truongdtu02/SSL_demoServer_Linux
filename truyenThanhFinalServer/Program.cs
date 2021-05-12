@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Security.Authentication;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using NetCoreServer;
@@ -85,7 +86,7 @@ namespace SslChatServer
                 var certWithKey = cert.CopyWithPrivateKey(key);
              */
 
-            var certLetsCrypt = X509Certificate2.CreateFromPemFile(@"/etc/letsencrypt/live/iothtnhust20201.xyz/fullchain.pem", @"/etc/letsencrypt/live/iothtnhust20201.xyz/privkey.pem");
+            //var certLetsCrypt = X509Certificate2.CreateFromPemFile(@"/etc/letsencrypt/live/iothtnhust20201.xyz/fullchain.pem", @"/etc/letsencrypt/live/iothtnhust20201.xyz/privkey.pem");
             //var certLetsCrypt = X509Certificate2.
             ////Pass the file path and file name to the StreamReader constructor
             //StreamReader sr = new StreamReader(@"/etc/letsencrypt/live/iothtnhust20201.xyz/chain.pem");
@@ -105,6 +106,15 @@ namespace SslChatServer
             // Create and prepare a new SSL server context
             //string certPath = @"/etc/letsencrypt/live/iothtnhust20201.xyz/my.pfx";
             //var context = new SslContext(SslProtocols.Tls12, new X509Certificate2(certPath, "Tru@1997"));
+
+            string certPemPath = @"/etc/letsencrypt/live/iothtnhust20201.xyz/fullchain.pem";
+            string keyPemPath = @"/etc/letsencrypt/live/iothtnhust20201.xyz/privkey.pem";
+
+            var eccPem = File.ReadAllText(keyPemPath);
+            var certPem = File.ReadAllText(certPemPath);
+
+            var certLetsCrypt = X509Certificate2.CreateFromPem(certPem, eccPem);
+
             var context = new SslContext(SslProtocols.Tls12, certLetsCrypt);
 
             // Create a new SSL chat server
